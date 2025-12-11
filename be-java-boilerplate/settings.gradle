@@ -1,0 +1,8 @@
+rootProject.name = 'be-boilerplate'
+include 'user'
+include 'discovery'
+include 'auth'
+include 'gateway'
+include 'common'
+include 'notification'
+include 'websocket'

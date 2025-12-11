@@ -1,0 +1,57 @@
+{
+  "auth": {
+    "login": {
+      "title": "Login",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "Enter your first name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Enter your last name",
+      "description": "Enter your credentials to access your account",
+      "email": "Email",
+      "emailPlaceholder": "john@example.com",
+      "password": "Password",
+      "submit": "Sign In",
+      "forgotPassword": "Forgot Password?",
+      "noAccount": "Don't have an account?",
+      "signUp": "Sign Up",
+      "rememberMe": "Remember me",
+      "confirmPassword": "Confirm Password",
+      "continueWithGoogle": "Or Continue with Google"
+    },
+    "register": {
+      "title": "Create an Account",
+      "description": "Sign up for a new account",
+      "name": "Full Name",
+      "namePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "john@example.com",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "submit": "Sign Up",
+      "haveAccount": "Already have an account?",
+      "signIn": "Sign In",
+      "termsAccept": "I accept the terms and conditions"
+    },
+    "forgotPassword": {
+      "title": "Reset Password",
+      "description": "Enter your email to reset your password",
+      "email": "Email",
+      "submit": "Send Reset Link",
+      "backToLogin": "Back to Login",
+      "emailPlaceholder": "john@example.com"
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "description": "Enter your new password",
+      "password": "New Password",
+      "confirmPassword": "Confirm Password",
+      "submit": "Reset Password",
+      "backToLogin": "Back to Login",
+      "passwordPlaceholder": "Enter your new password",
+      "confirmPasswordPlaceholder": "Confirm your new password",
+      "passwordNotMatch": "Passwords do not match",
+      "passwordLength": "Password must be at least 6 characters long",
+      "passwordMismatch": "Passwords do not match"
+    }
+  }
+}

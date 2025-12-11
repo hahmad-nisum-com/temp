@@ -1,0 +1,82 @@
+name: Docker Compose CI/CD
+
+on:
+  push:
+    branches: [main, feature/devops]
+    paths:
+      - 'auth/**'
+      - 'discovery/**'
+      - 'gateway/**'
+      - 'notification/**'
+      - 'user/**'
+      - 'websocket/**'
+  workflow_dispatch:
+
+env:
+  HOST_IP: 10.2.0.4
+  EUREKA_PORT: 9110
+
+jobs:
+  deploy:
+    runs-on: boilerplate
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Required for git diff
+
+      - name: Detect changed services
+        id: detect
+        run: |
+          changed=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} \
+            | grep -E '^(auth|discovery|gateway|notification|user|websocket)/' \
+            | cut -d/ -f1 | sort -u | tr '\n' ' ')
+          echo "changed_services=${changed:-none}" >> $GITHUB_OUTPUT
+          echo "Detected changes in: ${changed:-none}"
+
+      - name: Setup Java
+        if: steps.detect.outputs.changed_services != 'none'
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Build changed services
+        if: steps.detect.outputs.changed_services != 'none'
+        run: |
+          for svc in ${{ steps.detect.outputs.changed_services }}; do
+            echo "Building $svc service..."
+            ./gradlew :$svc:clean :$svc:build -x checkstyleMain
+          done
+
+      - name: Deploy changed services using Docker Compose
+        if: steps.detect.outputs.changed_services != 'none'
+        run: |
+          for svc in ${{ steps.detect.outputs.changed_services }}; do
+            echo "Starting $svc with Docker Compose..."
+
+            # Start the individual service using Docker Compose
+            docker compose -f docker-compose.yml up -d --build ${svc}-service
+
+            # Wait a few seconds for the container to start
+            sleep 10
+
+            # Check if the container is running
+            if docker ps --format '{{.Names}}' | grep -q "^${svc}-service$"; then
+              echo "$svc container is running."
+            else
+              echo "❌ $svc container failed to start."
+              docker logs ${svc}-service || true
+              exit 1
+            fi
+          done
+
+      - name: Verify Eureka registration
+        run: |
+          echo "=== Eureka App Registry Status ==="
+          sleep 20
+          curl -s "http://${{ env.HOST_IP }}:${{ env.EUREKA_PORT }}/eureka/apps" | grep -E 'name|status'

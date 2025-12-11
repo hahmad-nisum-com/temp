@@ -1,0 +1,370 @@
+{
+	"info": {
+		"_postman_id": "cb04dc25-b093-464b-9f86-04111559feae",
+		"name": "Boilerplate-Template-Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44715054",
+		"_collection_link": "https://hassan-6594177.postman.co/workspace/311f6be7-d6ea-4f06-88ac-22fe4ad37997/collection/44715054-cb04dc25-b093-464b-9f86-04111559feae?action=share&source=collection_link&creator=44715054"
+	},
+	"item": [
+		{
+			"name": "Auth Service",
+			"item": [
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alina.nisum@example.com\",\n    \"password\": \"G8rT$2mn3s!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/v1/auth/login",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:9080/api/v1/auth/login \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"email\": \"alina.nisum@example.com\",\n    \"password\": \"G8rT$2mn3s!\"\n}'\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refreshToken\": {{REFRESH_TOKEN}}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/v1/auth/logout",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:9080/api/v1/auth/logout \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"refreshToken\": \"YOUR_REFRESH_TOKEN\"\n}'\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Request_Access_Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refreshToken\": {{REFRESH_TOKEN}}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/v1/auth/refresh-token",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:9080/api/v1/auth/refresh-token \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"email\": \"alina.nisum@example.com\",\n    \"password\": \"G8rT$2mn3s!\"\n}'\n"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Service",
+			"item": [
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/api/v1/users",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET http://localhost:9080/api/v1/users \\\n  -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Get User By UUID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/api/v1/users/YOUR_UUID",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"YOUR_UUID"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET http://localhost:9080/api/v1/users/YOUR_UUID \\\n  -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"nisumuser123@gmail.com\",\n    \"firstName\": \"Nis\",\n    \"lastName\": \"User\",\n    \"password\": \"G8rT$9yn18!\",\n    \"phoneNumber\": \"1234522810\",\n    \"countryCode\": \"+92\",\n    \"isoCountry\": \"PK\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/v1/users",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:9080/api/v1/users \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"userName\": \"Xaviers\",\n    \"email\": \"xaviers.force@example.com\",\n    \"firstName\": \"Xavis\",\n    \"lastName\": \"Nights\",\n    \"password\": \"G8rT$2yn17!\",\n    \"phoneNumber\": \"1234527810\",\n    \"countryCode\": \"+92\",\n    \"isoCountry\": \"PK\",\n    \"userRoleId\": 1\n}'\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Forget Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mymetrospecial123@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/password/forgot-password",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"password",
+								"forgot-password"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:9080/api/password/forgot-password \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"email\": \"mymetrospecial123@gmail.com\"\n}'\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"G8rT$2yn19!\",\n    \"token\": \"YOUR_RESET_TOKEN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/password/update-password",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"password",
+								"update-password"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST http://localhost:9080/api/password/update-password \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"password\": \"G8rT$2yn19!\",\n    \"token\": \"YOUR_RESET_TOKEN\"\n}'\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User By UUID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Xavis\",\n    \"lastName\": \"Nights\",\n    \"phoneNumber\": \"1234527810\",\n    \"countryCode\": \"+92\",\n    \"isoCountry\": \"PK\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base-url}}/api/v1/users/{{UUID}}",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"{{UUID}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT http://localhost:9080/api/v1/users \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\" \\\n  -d '{\n    \"firstName\": \"Xavis\",\n    \"lastName\": \"Nights\",\n    \"phoneNumber\": \"1234527810\",\n    \"countryCode\": \"+92\",\n    \"isoCountry\": \"PK\"\n}'\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User By UUID",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{ACCESS_TOKEN}}"
+							}
+						],
+						"url": {
+							"raw": "{{base-url}}/api/v1/users",
+							"host": [
+								"{{base-url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						},
+						"description": "Generated from cURL: curl -X DELETE http://localhost:9080/api/v1/users \\\n  -H \"Authorization: Bearer YOUR_ACCESS_TOKEN\"\n"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

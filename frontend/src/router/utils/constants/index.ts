@@ -1,0 +1,1 @@
+export const NAVIGATE_EVENT = 'NAVIGATE_EVENT';

@@ -1,0 +1,12 @@
+package com.boilerplate.common.enums;
+
+public enum EmailType {
+    WELCOME,
+    PASSWORD_RESET,
+    ACCOUNT_BLOCK,
+    ACCOUNT_CREATION,
+    USER_ACCOUNT_STATUS_UPDATE,
+    USER_ACCOUNT_CREATION_BY_ADMIN,
+    USER_ACCOUNT_UPDATE,
+    PROMOTIONAL;
+}

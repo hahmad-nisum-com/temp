@@ -1,0 +1,100 @@
+version: '3.8'
+
+services:
+
+  auth-service:
+    build:
+      context: ./auth
+    container_name: auth-service
+    ports:
+      - "9120:9120"
+    restart: always
+    network_mode: host
+    environment:
+      - SPRING_DATASOURCE_USERNAME=boilerplate-user
+      - DB_HOST=10.2.0.4
+      - DB_PORT=3306
+      - DB_USER=boilerplate-user
+      - DB_PASSWORD=0vJ&l<S£h36
+      - EUREKA_HOST=10.2.0.4
+      - EUREKA_PORT=9110
+      - REDIS_HOST=10.2.0.4
+      - REDIS_PORT=6379
+      - REDIS_SSL=FALSE
+
+  gateway-service:
+    build:
+      context: ./gateway
+    container_name: gateway-service
+    ports:
+      - "9080:9080"
+    restart: always
+    network_mode: host
+    environment:
+      - EUREKA_HOST=10.2.0.4
+      - EUREKA_PORT=9110
+      - REDIS_HOST=10.2.0.4
+      - REDIS_PORT=6379
+
+  discovery-service:
+    build:
+      context: ./discovery
+    container_name: discovery-service
+    ports:
+      - "9110:9110"
+    restart: always
+    network_mode: host
+    environment:
+      - EUREKA_HOST=10.2.0.4
+      - EUREKA_PORT=9110
+
+  user-service:
+    build:
+      context: ./user
+    container_name: user-service
+    ports:
+      - "9150:9150"
+    restart: always
+    network_mode: host
+    environment:
+      - SPRING_DATASOURCE_USERNAME=boilerplate-user
+      - DB_HOST=10.2.0.4
+      - DB_PORT=3306
+      - DB_USER=boilerplate-user
+      - DB_PASSWORD=0vJ&l<S£h36
+      - EUREKA_HOST=10.2.0.4
+      - EUREKA_PORT=9110
+
+  notification-service:
+    build:
+      context: ./notification
+    container_name: notification-service
+    ports:
+      - "9090:9090"
+    restart: always
+    network_mode: host
+    environment:
+      - SPRING_DATASOURCE_USERNAME=boilerplate-user
+      - DB_HOST=10.2.0.4
+      - DB_PORT=3306
+      - DB_USER=boilerplate-user
+      - DB_PASSWORD=0vJ&l<S£h36
+      - EUREKA_HOST=10.2.0.4
+      - EUREKA_PORT=9110
+
+  websocket-service:
+    build:
+      context: ./websocket
+    container_name: websocket-service
+    ports:
+      - "9210:9210"
+    restart: always
+    network_mode: host
+    environment:
+      - SPRING_DATASOURCE_USERNAME=boilerplate-user
+      - DB_HOST=10.2.0.4
+      - DB_PORT=3306
+      - DB_USER=boilerplate-user
+      - DB_PASSWORD=0vJ&l<S£h36
+      - EUREKA_HOST=10.2.0.4
+      - EUREKA_PORT=9110

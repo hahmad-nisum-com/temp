@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: local
+
+  application:
+    name: boilerplate-user
+    default-time-zone: UTC
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+feign:
+  circuitbreaker:
+    enabled: true
+  retry:
+    max: 1
+    interval: 2000
+
+resilience4j:
+  timelimiter:
+    configs:
+      default:
+        timeout-duration: 60s
+
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          servlet:
+            DispatcherServlet: DEBUG
+    org.springframework.cloud.sleuth: INFO

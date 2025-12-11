@@ -1,0 +1,27 @@
+# Enable case-insensitive matching
+shopt -s nocasematch
+
+# Regex to validate commit message
+commit_regex="^\[.+\].*$"
+
+# Get the commit message
+commit_msg_file="${1:?Missing commit message file}"
+commit_msg=$(cat "$commit_msg_file")
+
+# Error message for invalid format
+error_msg="Error: Invalid commit message format.
+
+Commit message must:
+1. Start with text in square brackets []
+2. Followed by your commit message
+
+Examples:
+- [AUTH] Add login functionality
+- [UI] Update button styles
+- [FIX] Resolve API connection issue"
+
+# Check if message matches the pattern
+if ! [[ $commit_msg =~ $commit_regex ]]; then
+    echo "$error_msg" >&2
+    exit 1
+fi

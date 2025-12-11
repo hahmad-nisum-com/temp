@@ -1,0 +1,75 @@
+{
+  "userManagement": {
+    "title": "Gestión de Usuarios",
+    "addUser": "Añadir Usuario",
+    "search": "Buscar usuarios...",
+    "table": {
+      "name": "Nombre",
+      "role": "Rol",
+      "status": "Estado",
+      "lastActive": "Última Actividad",
+      "actions": "Acciones",
+      "noUsers": "No se encontraron usuarios.",
+      "selected": "{{count}} de {{total}} fila(s) seleccionada(s).",
+      "previous": "Anterior",
+      "next": "Siguiente"
+    },
+    "stats": {
+      "totalUsers": "Total de Usuarios",
+      "activeUsers": "Usuarios Activos",
+      "inactiveUsers": "Usuarios Inactivos",
+      "newUsers": "Nuevos Usuarios",
+      "fromLastMonth": "+{{percent}}% desde el mes pasado"
+    },
+    "roles": {
+      "admin": "Administrador",
+      "user": "Usuario",
+      "editor": "Editor"
+    },
+    "status": {
+      "active": "Activo",
+      "inactive": "Inactivo",
+      "pending": "Pendiente"
+    },
+    "actions": {
+      "copyId": "Copiar ID de usuario",
+      "edit": "Editar usuario",
+      "delete": "Eliminar usuario"
+    },
+    "addUserDialog": {
+      "title": "Añadir Nuevo Usuario",
+      "description": "Crea una nueva cuenta de usuario. Haz clic en guardar cuando hayas terminado."
+    },
+    "editUserDialog": {
+      "title": "Editar Usuario",
+      "description": "Realiza cambios en la cuenta de usuario. Haz clic en guardar cuando hayas terminado."
+    },
+    "deleteUserDialog": {
+      "title": "Eliminar Usuario",
+      "description": "¿Estás seguro de que quieres eliminar este usuario? Esta acción no se puede deshacer.",
+      "confirmationText": "Estás a punto de eliminar a {{name}} ({{email}}).",
+      "cancel": "Cancelar",
+      "confirm": "Eliminar"
+    },
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Juan Pérez",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "juan@ejemplo.com",
+      "role": "Rol",
+      "rolePlaceholder": "Selecciona un rol",
+      "status": "Estado",
+      "statusPlaceholder": "Selecciona un estado",
+      "cancel": "Cancelar",
+      "save": "Guardar Cambios",
+      "create": "Crear Usuario",
+      "saving": "Guardando..."
+    },
+    "validation": {
+      "nameRequired": "El nombre debe tener al menos 2 caracteres.",
+      "emailRequired": "Por favor, introduce una dirección de correo electrónico válida.",
+      "roleRequired": "Por favor, selecciona un rol.",
+      "statusRequired": "Por favor, selecciona un estado."
+    }
+  }
+}

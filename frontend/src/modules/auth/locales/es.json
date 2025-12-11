@@ -1,0 +1,38 @@
+{
+  "auth": {
+    "login": {
+      "title": "Iniciar Sesión",
+      "description": "Ingresa tus credenciales para acceder a tu cuenta",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "juan@ejemplo.com",
+      "password": "Contraseña",
+      "submit": "Ingresar",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "noAccount": "¿No tienes una cuenta?",
+      "signUp": "Regístrate",
+      "rememberMe": "Recuérdame",
+      "continueWithGoogle": "Continuar con Google"
+    },
+    "register": {
+      "title": "Crear una Cuenta",
+      "description": "Regístrate para una nueva cuenta",
+      "name": "Nombre Completo",
+      "namePlaceholder": "Juan Pérez",
+      "email": "Correo electrónico",
+      "emailPlaceholder": "juan@ejemplo.com",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar Contraseña",
+      "submit": "Registrarse",
+      "haveAccount": "¿Ya tienes una cuenta?",
+      "signIn": "Iniciar Sesión",
+      "termsAccept": "Acepto los términos y condiciones"
+    },
+    "forgotPassword": {
+      "title": "Restablecer Contraseña",
+      "description": "Ingresa tu correo electrónico para restablecer tu contraseña",
+      "email": "Correo electrónico",
+      "submit": "Enviar Link de Restablecimiento",
+      "backToLogin": "Volver a Iniciar Sesión"
+    }
+  }
+}

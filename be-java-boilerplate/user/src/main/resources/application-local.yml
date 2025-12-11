@@ -1,0 +1,37 @@
+server:
+  port: ${SERVER_PORT:9150}
+
+spring:
+  datasource:
+    username: root
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:boilerplate}?createDatabaseIfNotExist=true&serverTimezone=UTC
+    password: ${DB_PASSWORD:root1234}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/changelog-master.xml
+
+  jpa:
+    defer-datasource-initialization: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        jdbc:
+          time_zone: UTC
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+    open-in-view: true
+    show-sql: true
+
+  sleuth:
+    enabled: true
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:9110}/eureka
+
+base-url: http://74.235.123.22:9080

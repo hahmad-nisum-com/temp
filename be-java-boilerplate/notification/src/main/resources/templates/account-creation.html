@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f9f9f9; font-family: Arial, sans-serif;">
+
+<div style="max-width: 600px; margin: 40px auto; background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+  <div style="text-align: center; margin-bottom: 30px;">
+    <h2 style="color: #7b9e7e;">Welcome to Boilerplate !</h2>
+  </div>
+
+  <p style="font-size: 16px; color: #00205F;">
+    Dear <strong><span th:text="${username}">User</span></strong>,
+  </p>
+
+  <p style="font-size: 16px; color: #444;">
+    We're excited to have you on board. Your account has been successfully created.
+  </p>
+
+  <p style="font-size: 15px; color: #444;">
+    If you need any help or support, feel free to reach out to our support team at any time.
+  </p>
+
+  <p style="font-size: 15px; color: #777;">
+    Best regards,<br/>
+    The Boilerplate User Team
+  </p>
+</div>
+
+<div style="text-align: center; padding: 20px; background-color: #00205F; color: white;">
+  <p style="margin: 0;">&copy; 2025 Boilerplate User. All rights reserved.</p>
+</div>
+
+</body>
+</html>

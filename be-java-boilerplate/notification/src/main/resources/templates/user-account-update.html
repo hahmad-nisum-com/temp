@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div style="font-size: 16px; font-family: Arial, sans-serif; width: 600px; margin-left: auto; margin-right: auto; color: #00205F;">
+    <p style="font-weight: bold">Dear <span th:text="${username}">User</span>,</p>
+
+    <p th:text="${content}" style="font-size: 18px; color: #000; font-weight: bold;">
+        Your account has been updated by the admin.
+    </p>
+
+    <p>For further assistance, please contact our support team.</p>
+
+    <p style="font-size: 14px; color: #aaa; margin-top: 40px;">
+        — The Boilerplate User Team
+    </p>
+
+</div>
+</html>

@@ -1,0 +1,134 @@
+{
+  "profile": {
+    "title": "Profile",
+    "subtitle": "Manage your personal information and account settings",
+    "personalInfo": {
+      "title": "Personal Information",
+      "description": "Update your personal details and profile information",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "bio": "Bio",
+      "jobTitle": "Job Title",
+      "department": "Department",
+      "location": "Location",
+      "save": "Save Changes",
+      "cancel": "Cancel",
+      "saving": "Saving...",
+      "successMessage": "Profile updated successfully",
+      "errorMessage": "Failed to update profile"
+    },
+    "changePassword": {
+      "title": "Change Password",
+      "description": "Update your password to keep your account secure",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm Password",
+      "save": "Update Password",
+      "cancel": "Cancel",
+      "saving": "Updating...",
+      "successMessage": "Password updated successfully",
+      "errorMessage": "Failed to update password",
+      "passwordRequirements": "Password must be at least 8 characters and include a letter, a number, and a special character"
+    },
+    "avatar": {
+      "title": "Profile Picture",
+      "description": "Upload a profile picture to personalize your account",
+      "upload": "Upload",
+      "remove": "Remove",
+      "uploading": "Uploading...",
+      "successMessage": "Profile picture updated successfully",
+      "errorMessage": "Failed to update profile picture"
+    },
+    "navigation": {
+      "profile": "Profile",
+      "changePassword": "Change Password",
+      "security": "Security",
+      "preferences": "Preferences"
+    },
+    "tabs": {
+      "general": "General",
+      "details": "Details",
+      "activity": "Activity"
+    },
+    "details": {
+      "title": "Additional Details",
+      "description": "Your professional information and preferences"
+    },
+    "activity": {
+      "title": "Recent Activity",
+      "description": "Your recent actions and updates"
+    },
+    "labels": {
+      "jobTitle": "Job Title",
+      "department": "Department",
+      "location": "Location",
+      "memberSince": "Member Since",
+      "bio": "Bio",
+      "notSpecified": "Not specified"
+    },
+    "preferences": {
+      "notification": {
+        "title": "Notification Preferences",
+        "description": "Manage how you receive notifications",
+        "email": {
+          "title": "Email Notifications",
+          "description": "Receive notifications via email"
+        },
+        "push": {
+          "title": "Push Notifications",
+          "description": "Receive notifications in your browser"
+        },
+        "marketing": {
+          "title": "Marketing Emails",
+          "description": "Receive updates about new features and promotions"
+        }
+      },
+      "display": {
+        "title": "Display Preferences",
+        "description": "Customize your display settings",
+        "theme": "Theme",
+        "language": "Language"
+      },
+      "theme": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+      },
+      "language": {
+        "english": "English",
+        "spanish": "Spanish"
+      },
+      "saveButton": "Save Preferences"
+    },
+    "security": {
+      "title": "Security Settings",
+      "description": "Manage your account security settings",
+      "status": {
+        "title": "Security Status",
+        "enabled": "Your account has enhanced security measures enabled.",
+        "disabled": "Your account could be more secure. Enable two-factor authentication."
+      },
+      "twoFactor": {
+        "title": "Two-Factor Authentication",
+        "description": "Add an extra layer of security to your account",
+        "setupTitle": "Set up Two-Factor Authentication",
+        "setupInstructions": "Scan this QR code with your authenticator app, then enter the verification code below.",
+        "completeSetup": "Complete Setup"
+      },
+      "loginNotifications": {
+        "title": "Login Notifications",
+        "description": "Receive notifications for new login attempts"
+      },
+      "recentActivity": "Recent Login Activity",
+      "sessions": {
+        "logout": "Logout"
+      },
+      "tip": {
+        "title": "Security Tip",
+        "description": "Never share your password or verification codes with anyone, including Vercel support."
+      }
+    }
+  }
+}

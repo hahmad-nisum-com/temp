@@ -1,0 +1,134 @@
+{
+  "profile": {
+    "title": "Perfil",
+    "subtitle": "Administra tu información personal y configuración de cuenta",
+    "personalInfo": {
+      "title": "Información Personal",
+      "description": "Actualiza tus datos personales e información de perfil",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "bio": "Biografía",
+      "jobTitle": "Cargo",
+      "department": "Departamento",
+      "location": "Ubicación",
+      "save": "Guardar Cambios",
+      "cancel": "Cancelar",
+      "saving": "Guardando...",
+      "successMessage": "Perfil actualizado con éxito",
+      "errorMessage": "Error al actualizar el perfil"
+    },
+    "changePassword": {
+      "title": "Cambiar Contraseña",
+      "description": "Actualiza tu contraseña para mantener tu cuenta segura",
+      "currentPassword": "Contraseña Actual",
+      "newPassword": "Nueva Contraseña",
+      "confirmPassword": "Confirmar Contraseña",
+      "save": "Actualizar Contraseña",
+      "cancel": "Cancelar",
+      "saving": "Actualizando...",
+      "successMessage": "Contraseña actualizada con éxito",
+      "errorMessage": "Error al actualizar la contraseña",
+      "passwordRequirements": "La contraseña debe tener al menos 8 caracteres e incluir una letra, un número y un carácter especial"
+    },
+    "avatar": {
+      "title": "Foto de Perfil",
+      "description": "Sube una foto de perfil para personalizar tu cuenta",
+      "upload": "Subir",
+      "remove": "Eliminar",
+      "uploading": "Subiendo...",
+      "successMessage": "Foto de perfil actualizada con éxito",
+      "errorMessage": "Error al actualizar la foto de perfil"
+    },
+    "navigation": {
+      "profile": "Perfil",
+      "changePassword": "Cambiar Contraseña",
+      "security": "Seguridad",
+      "preferences": "Preferencias"
+    },
+    "tabs": {
+      "general": "General",
+      "details": "Detalles",
+      "activity": "Actividad"
+    },
+    "details": {
+      "title": "Detalles Adicionales",
+      "description": "Tu información profesional y preferencias"
+    },
+    "activity": {
+      "title": "Actividad Reciente",
+      "description": "Tus acciones y actualizaciones recientes"
+    },
+    "labels": {
+      "jobTitle": "Cargo",
+      "department": "Departamento",
+      "location": "Ubicación",
+      "memberSince": "Miembro Desde",
+      "bio": "Biografía",
+      "notSpecified": "No especificado"
+    },
+    "preferences": {
+      "notification": {
+        "title": "Preferencias de notificación",
+        "description": "Administra cómo recibes notificaciones",
+        "email": {
+          "title": "Notificaciones por correo electrónico",
+          "description": "Recibir notificaciones por correo electrónico"
+        },
+        "push": {
+          "title": "Notificaciones push",
+          "description": "Recibir notificaciones en su navegador"
+        },
+        "marketing": {
+          "title": "Correos electrónicos de marketing",
+          "description": "Recibe actualizaciones sobre nuevas funciones y promociones"
+        }
+      },
+      "display": {
+        "title": "Preferencias de visualización",
+        "description": "Personaliza tu configuración de visualización",
+        "theme": "Tema",
+        "language": "Idioma"
+      },
+      "theme": {
+        "light": "Claro",
+        "dark": "Oscuro",
+        "system": "Sistema"
+      },
+      "language": {
+        "english": "Inglés",
+        "spanish": "Español"
+      },
+      "saveButton": "Guardar preferencias"
+    },
+    "security": {
+      "title": "Configuración de seguridad",
+      "description": "Administra la configuración de seguridad de tu cuenta",
+      "status": {
+        "title": "Estado de seguridad",
+        "enabled": "Tu cuenta tiene medidas de seguridad mejoradas habilitadas.",
+        "disabled": "Tu cuenta podría estar más segura. Habilita la autenticación de dos factores."
+      },
+      "twoFactor": {
+        "title": "Autenticación de dos factores",
+        "description": "Agrega una capa adicional de seguridad a tu cuenta",
+        "setupTitle": "Configurar autenticación de dos factores",
+        "setupInstructions": "Escanee este código QR con su aplicación de autenticación, luego ingrese el código de verificación a continuación.",
+        "completeSetup": "Completar configuración"
+      },
+      "loginNotifications": {
+        "title": "Notificaciones de inicio de sesión",
+        "description": "Recibir notificaciones de nuevos intentos de inicio de sesión"
+      },
+      "recentActivity": "Actividad reciente de inicio de sesión",
+      "sessions": {
+        "logout": "Cerrar sesión"
+      },
+      "tip": {
+        "title": "Consejo de seguridad",
+        "description": "Nunca comparta su contraseña o códigos de verificación con nadie, incluido el soporte de Vercel."
+      }
+    }
+  }
+}

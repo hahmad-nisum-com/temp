@@ -1,0 +1,28 @@
+server:
+  port: ${SERVER_PORT:9210}
+
+spring:
+  datasource:
+    username: root
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:boilerplate}?createDatabaseIfNotExist=true&serverTimezone=UTC
+    password: ${DB_PASSWORD:root1234}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+    show-sql:true:
+    generate-ddl: true
+    open-in-view: true
+    show-sql: false
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT:9110}/eureka

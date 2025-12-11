@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unsubscribe</title>
+</head>
+<body>
+<h2 id="message">Processing your request...</h2>
+
+<script>
+  window.onload = async function () {
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get("email");
+
+    if (!email) {
+      document.getElementById("message").innerText = "❌ Missing email parameter.";
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://localhost:9150/api/v1/users/unsubscribe?email=${email}`, {
+        method: 'PATCH'
+      });
+
+      if (response.ok) {
+        document.getElementById("message").innerText = "✅ You have been successfully unsubscribed.";
+      } else {
+        const error = await response.text();
+        document.getElementById("message").innerText = `❌ Failed: ${error}`;
+      }
+    } catch (e) {
+      document.getElementById("message").innerText = `❌ Error: ${e.message}`;
+    }
+  };
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Account Attempts Alert</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f9f9f9; font-family: Arial, sans-serif;">
+
+<div style="max-width: 600px; margin: 40px auto; background-color: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+  <div style="margin-bottom: 30px;">
+    <h2 style="color: #e07b7b;">Account Security Alert</h2>
+  </div>
+
+  <p style="font-size: 16px; color: #00205F;">
+    Dear <strong><span th:text="${email}">Email</span></strong>,
+  </p>
+
+  <p style="font-size: 16px; color: #444;">
+    This is to inform you that your remaining login attempts are:
+    <span th:text="${attempts_left}" style="font-weight: bold; font-size: 24px; color: #50b89b; margin-left: 5px;"></span>
+  </p>
+
+
+  <p th:text="${detailed_message}" style="font-size: 16px; color: #444; margin-top: 20px;"></p>
+
+  <p style="font-size: 15px; color: #777; margin-top: 30px;">
+    For any further assistance, please reach out to our support team.
+  </p>
+
+  <p style="font-size: 15px; color: #777;">
+    Regards,<br/>
+    The Boilerplate User Team
+  </p>
+</div>
+
+<div style="text-align: center; padding: 20px; background-color: #00205F; color: white;">
+  <p style="margin: 0;">&copy; 2025 Boilerplate. All rights reserved.</p>
+</div>
+
+</body>
+</html>

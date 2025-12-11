@@ -1,0 +1,33 @@
+# Protected branches that should not allow force push or deletion
+protected_branches='^(main|master|prod|production)$'
+
+# Policy message
+policy="[Policy] Force push and branch deletion are not allowed on protected branches: main, master, prod, production"
+
+# Get the push command that triggered this hook
+parent_pid=$(ps -oppid= -p $PPID)
+push_command=$(ps -ocommand= -p $parent_pid)
+
+# Patterns to detect destructive actions
+is_destructive='force|delete|\-f'
+will_remove_protected_branch=":($protected_branches)"
+
+# Check if this is a destructive operation on a protected branch
+if [[ $push_command =~ $is_destructive && $push_command =~ $protected_branches ]] || \
+   [[ $push_command =~ $will_remove_protected_branch ]] || \
+   [[ $push_command =~ $protected_branches ]]
+then
+    echo ""
+    echo "🚫 Error: Protected Branch Policy Violation"
+    echo "────────────────────────────────────────"
+    echo "$policy"
+    echo ""
+    echo "Your command: $push_command"
+    echo ""
+    echo "To push changes to a protected branch:"
+    echo "1. Create a feature branch"
+    echo "2. Push to the feature branch"
+    echo "3. Create a pull request"
+    echo "────────────────────────────────────────"
+    exit 1
+fi
